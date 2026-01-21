@@ -104,8 +104,8 @@
 
     <section>
       <h2>Kontak</h2>
-      <p>Email: kzreizer@email.com</p>
-      <p>Telp: 082150942009</p>
+      <p>Email 📧: kzreizer@gmail.com</p>
+      <p>Telp 📞: 082150942009</p>
     </section>
 
     
