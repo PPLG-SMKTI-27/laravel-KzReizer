@@ -4,13 +4,13 @@
 
 @section('content')
   <section class="hero">
-    <h1>Luxury Cars, Premium Experience</h1>
-    <p>Dealer mobil mewah terpercaya</p>
+    <h1>{{ $project['tagline'] }}</h1>
+    <p>{{ $project['desc'] }}</p>
   </section>
 
   <section class="profile">
     <h2>Profil Dealer</h2>
-    <p>Ini halaman project</p>
+    <p>{{ $project['profil'] }}</p>
 
     <a href="{{ route('index') }}" class="btn">Portofolio saya</a>
   </section>

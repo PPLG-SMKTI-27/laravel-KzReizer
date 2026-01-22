@@ -12,21 +12,14 @@ class ProjectController extends Controller
         return view('index');
     }
 
-    public function index()
+    public function project()
     {
-        // Contoh: kirim ke view 'project'
-        return view('project', [
-            'nama' => 'reizer'
-        ]);
-    }
+    $project = [
+        'tagline' => 'Luxury Cars, Premium Experience',
+        'desc' => 'Dealer mobil mewah terpercaya, dan menyediakan berbagai pilihan kendaraan eksklusif untuk memenuhi kebutuhan Anda.',
+        'profil' => 'Kami adalah dealer mobil mewah yang baru berdiri pada tahun 2026. Dengan komitmen untuk memberikan layanan terbaik dan kendaraan berkualitas tinggi, kami bertujuan untuk menjadi pilihan utama bagi para pecinta mobil mewah di indonesia',
+    ];
 
-    public function siswa($nama)
-    {
-        // Return response 
-        return "Halo " . $nama;
-    }
+    return view('project', compact('project'));
 }
-
-
-
-
+}
