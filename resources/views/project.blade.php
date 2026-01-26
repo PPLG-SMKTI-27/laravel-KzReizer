@@ -12,6 +12,6 @@
     <h2>Profil Dealer</h2>
     <p>{{ $project['profil'] }}</p>
 
-    <a href="{{ route('index') }}" class="btn">Portofolio saya</a>
+    <button class="btn-primary" onclick="window.location.href='{{ route('index') }}'">portfolio saya</button>
   </section>
 @endsection

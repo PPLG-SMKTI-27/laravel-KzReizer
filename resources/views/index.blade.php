@@ -1,121 +1,93 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Kz</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f1220;
-      color: #eaeaf0;
-    }
-    
+@extends('layouts.portfolio')
 
-    .profile {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 3px solid #2a2e52;
-      margin: 0 auto 15px;
-      display: block;
-      
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 40px 20px;
-      
-      
-    }
-    h1, h2 {
-      margin-bottom: 10px;
-    }
-    p {
-      color: #b5b8c9;
-      line-height: 1.6;
-    }
-    section {
-      margin-top: 30px;
-    }
-    ul {
-      padding-left: 18px;
-    }
-    li {
-      margin-bottom: 6px;
-      color: #b5b8c9;
-    }
+@section('title', 'Portfolio | Kz')
 
-    .btn {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 8px;
-  background: #6c7cff;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
+@section('content')
 
-.btn:hover {
-  background: #5a69e6;
-  transform: translateY(-2px);
-}
+{{-- HERO --}}
+<section class="hero container">
+  <div class="hero-grid">
+    <div>
+    <h1>Michael Rival </h1>
+    <p>Portfolio ini berisi kumpulan project web yang saya buat sebagai tugas sekolah dan latihan pengembangan web</p>
+      </h1>
 
-.btn:active {
-  transform: translateY(0);
-}
 
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #8a8fa8;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <img src="foto.jpg" class="profile">
-  <div class="container">
-    <header>
-      
-      
-      <h1>Michael rival</h1>
-      <p>Pelajar yang tertarik sama teknologi, dan game.</p>
-    </header>
 
-    <section>
-      <h2>Tentang Saya</h2>
-      <p>saya manusia.</p>
-    </section>
+      <div class="hero-actions">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn outline">Contact</a>
+      </div>
 
-    <section>
-      <h2>Skill</h2>
-      <ul>
-        <li>HTML & CSS dasar</li>
-        <li>Basic php</li>
-      </ul>
-    </section>
+    </div>
 
-    <section>
-      <h2>Kontak</h2>
-      <p>Email 📧: kzreizer@gmail.com</p>
-      <p>Telp 📞: 082150942009</p>
-    </section>
-
-    
-    <a href="{{ route('login') }}" class="btn">Project Saya</a>
-    
-
-    <footer>
-      © 2026 
-    </footer>
+    <div class="hero-photo">
+      <img src="{{ asset('foto.jpg') }}" alt="Profile Kz">
+    </div>
   </div>
-</body>
-</html>
+</section>
+
+{{-- PROJECTS --}}
+<section id="projects" class="section container">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-thumb">LUXAUTO</div>
+      <div class="project-content">
+        <h4>LuxAuto</h4>
+        <p>Luxury car dealer website built with Laravel.</p>
+        <a href="{{ route('login') }}" class="btn outline">Detail</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">PORTFOLIO</div>
+      <div class="project-content">
+        <h4>Personal Portfolio</h4>
+        <p>Single page portfolio dengan fokus ke clarity.</p>
+        <a href="#" class="btn outline">Detail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h4>Frontend</h4>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li></li>
+          </ul>
+        </div>
+
+        <div class="skill-box">
+          <h4>Backend</h4>
+          <ul>
+            <li>PHP</li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+{{-- CONTACT --}}
+<section id="contact" class="section container">
+  <div class="contact-box">
+    <h2>kontak saya</h2>
+      <br>
+    <a href="https://wa.me/6282150942009" class="btn" target="_blank">WhatsApp</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kzreizer@gmail.com" class="btn" target="_blank">Email</a>
+    <a href="https://github.com/kzreizer" class="btn" target="_blank">GitHub</a>
+  </div>
+</section>
+
+@endsection

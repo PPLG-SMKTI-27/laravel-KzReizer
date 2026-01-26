@@ -4,6 +4,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserDashboardController;
 
+
 Route::get('/', [ProjectController::class, 'home'])->name('index');
 
 
