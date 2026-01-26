@@ -25,14 +25,7 @@
       <a href="#">Contact</a>
     </nav>
 
-    <div class="user-menu">
-      @guest
-        <button class="btn-outline">Login</button>
-        <button class="btn-primary">Register</button>
-      @else
-        <span>{{ Auth::user()->name }}</span>
-      @endguest
-    </div>
+
   </header>
 
   <main>

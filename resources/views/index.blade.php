@@ -85,6 +85,7 @@
   <div class="container">
     <header>
       
+      
       <h1>Michael rival</h1>
       <p>Pelajar yang tertarik sama teknologi, dan game.</p>
     </header>
@@ -109,7 +110,7 @@
     </section>
 
     
-    <a href="{{ route('project') }}" class="btn">Project Saya</a>
+    <a href="{{ route('login') }}" class="btn">Project Saya</a>
     
 
     <footer>
