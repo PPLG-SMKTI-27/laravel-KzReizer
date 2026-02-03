@@ -11,9 +11,6 @@ Route::get('/', [ProjectController::class, 'home'])->name('index');
 Route::get('/project', [ProjectController::class, 'project'])->name('project');
 
 
-Route::get('/siswa/{nama}', [ProjectController::class, 'siswa'])->name('siswa');
-
-
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -21,5 +22,21 @@ class ProjectController extends Controller
     ];
 
     return view('project', compact('project'));
+    
+}
+    
+public function storeDummy()
+{
+    Project::create([
+        'title' => 'LuxAuto',
+        'description' => 'Website dealer mobil',
+        'image' => 'luxauto.png'
+    ]);
+
+    Project::create([
+        'title' => 'Portfolio',
+        'description' => 'Website pribadi',
+        'image' => 'portfolio.png'
+    ]);
 }
 }
