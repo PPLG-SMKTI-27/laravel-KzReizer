@@ -16,7 +16,8 @@ class SkillSeeder extends Seeder
     DB::table('skills')->insert([
     ['name' => 'HTML', 'level' => 'Advanced'],
     ['name' => 'CSS', 'level' => 'Advanced'],
-    ['name' => 'Laravel', 'level' => 'Intermediate']
+    ['name' => 'Laravel', 'level' => 'Intermediate'],
+    ['name' => 'Javascript', 'level' => 'Beginner']
 ]);
 
     }

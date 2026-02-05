@@ -27,28 +27,28 @@
   </div>
 </section>
 
-{{-- PROJECTS --}}
 <section id="projects" class="section container">
   <h2 class="section-title">Projects</h2>
 
   <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-thumb">LUXAUTO</div>
-      <div class="project-content">
-        <h4>LuxAuto</h4>
-        <p>Luxury car dealer website built with Laravel.</p>
-        <a href="{{ route('login') }}" class="btn outline">Detail</a>
+    @forelse ($projects as $project)
+      <div class="project-card">
+        <div class="project-thumb">
+          @if(!empty($project->image))
+            <img src="{{ asset('images/' . $project->image) }}" alt="{{ $project->title }}">
+          @else
+            {{ strtoupper(\Illuminate\Support\Str::limit($project->title, 8, '')) }}
+          @endif
+        </div>
+        <div class="project-content">
+          <h4>{{ $project->title }}</h4>
+          <p>{{ $project->description }}</p>
+          <a href="{{ route('login') }}" class="btn outline">Detail</a>
+        </div>
       </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-thumb">PORTFOLIO</div>
-      <div class="project-content">
-        <h4>Personal Portfolio</h4>
-        <p>Single page portfolio dengan fokus ke clarity.</p>
-        <a href="#" class="btn outline">Detail</a>
-      </div>
-    </div>
+    @empty
+      <p>Project masih kosong.</p>
+    @endforelse
   </div>
 </section>
 
@@ -58,23 +58,14 @@
       <h2 class="section-title">Skills</h2>
 
       <div class="skills-grid">
-        <div class="skill-box">
-          <h4>Frontend</h4>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li></li>
-          </ul>
-        </div>
-
-        <div class="skill-box">
-          <h4>Backend</h4>
-          <ul>
-            <li>PHP</li>
-          </ul>
-        </div>
-
-
+        @forelse ($skills as $skill)
+          <div class="skill-box">
+            <h4>{{ $skill->name }}</h4>
+            <p>{{ $skill->level }}</p>
+          </div>
+        @empty
+          <p>Skill masih kosong.</p>
+        @endforelse
       </div>
     </div>
   </section>

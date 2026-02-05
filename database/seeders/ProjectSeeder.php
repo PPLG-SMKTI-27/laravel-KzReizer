@@ -16,13 +16,13 @@ class ProjectSeeder extends Seeder
         DB::table('projects')->insert([
         [
             'title' => 'LuxAuto',
-            'description' => 'Dealer mobil mewah',
-            'image' => 'luxauto.png'
+            'description' => 'Website dealer mobil mewah',
+            'image' => 'images/luxauto.jpeg'
         ],
         [
             'title' => 'Portfolio',
-            'description' => 'Website biodata',
-            'image' => 'porto.png'
+            'description' => 'Website Pribadi untuk menampilkan karya dan pengalaman saya',
+            'image' => 'images/portfolio.jpeg'
         ]
     ]);
     }

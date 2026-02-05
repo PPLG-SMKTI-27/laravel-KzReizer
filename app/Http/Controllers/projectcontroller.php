@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Skill;
 
 class ProjectController extends Controller
 {
     public function home()
     {
         // Menampilkan halaman index (portfolio)
-        return view('index');
+        $projects = Project::all();
+        $skills = Skill::all();
+        return view('index', compact('projects', 'skills'));
     }
 
     public function project()
@@ -25,18 +28,6 @@ class ProjectController extends Controller
     
 }
     
-public function storeDummy()
-{
-    Project::create([
-        'title' => 'LuxAuto',
-        'description' => 'Website dealer mobil',
-        'image' => 'luxauto.png'
-    ]);
 
-    Project::create([
-        'title' => 'Portfolio',
-        'description' => 'Website pribadi',
-        'image' => 'portfolio.png'
-    ]);
-}
+
 }
