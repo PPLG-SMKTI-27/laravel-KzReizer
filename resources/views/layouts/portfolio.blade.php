@@ -29,7 +29,7 @@
   </main>
 
   <footer>
-    © 2026 Kz. Built with logic & coffee.
+    © 2026 Kz. Built with logic   
   </footer>
 
   {{-- LOGIN MODAL --}}

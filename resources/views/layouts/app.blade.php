@@ -1,36 +1,30 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>@yield('title', 'LuxAuto')</title>
-
-  @vite('resources/css/app.css')
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@vite(['resources/css/dashboard.css','resources/js/app.js'])
 </head>
+
 <body>
 
-  <div class="warning-bar">
-    <div class="warn">!! Warning Masih Dalam Tahap Pengembangan !!</div>
+<div class="sidebar">
+  <h2>Lux Panel</h2>
+  <a href="{{ route('profile.edit') }}">Profile</a>
+  <a href="{{ route('index') }}">portofolio</a>
+  <a href="{{ route('project') }}">project luxauto</a>
+
+  <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <button>Logout</button>
+  </form>
+</div>
+
+<div class="main">
+  <div class="panel">
+    {{ $slot }}
   </div>
-
-  <header class="navbar">
-    <div class="logo">Lux<span>Auto</span></div>
-
-    <nav class="nav-menu">
-      <a href="#">Home</a>
-      <a href="#">Cars</a>
-      <a href="#">Brands</a>
-      <a href="#">Services</a>
-      <a href="#">Promo</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-
-
-  </header>
-
-  <main>
-    @yield('content')
-  </main>
+</div>
 
 </body>
 </html>

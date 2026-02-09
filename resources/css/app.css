@@ -39,7 +39,7 @@ body {
   background: #111;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 15px 40px;
   border-bottom: 1px solid #222;
 }
@@ -47,6 +47,8 @@ body {
 .logo {
   font-size: 22px;
   font-weight: bold;
+  position: absolute;
+  left: 40px;
 }
 
 .logo span {
@@ -58,9 +60,11 @@ body {
   text-decoration: none;
   color: #ccc;
   font-size: 14px;
+  
+  
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover { 
   color: gold;
 }
 

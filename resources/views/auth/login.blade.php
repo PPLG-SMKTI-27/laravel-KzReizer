@@ -1,40 +1,34 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login - LuxAuto</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
-    <div class="login-container">
-        <div class="login-box">
-            <h2>Login</h2>
-            
-            @if ($errors->any())
-              <div class="error-message">
-                <ul>
-                  @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                  @endforeach
-                </ul>
-              </div>
-            @endif
+{{-- ================= LOGIN ================= --}}
+<x-guest-layout>
 
-            <form action="{{ route('login') }}" method="POST">
-              @csrf
-              
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-              </div>
+<div class="form-wrap panel">
 
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-              </div>
+  <h1 class="title">Login</h1>
 
-              <button type="submit">Login</button>
-            </form>
-        </div>
+  <form method="POST" action="{{ route('login') }}">
+    @csrf
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>Password</label>
+    <input type="password" name="password" required>
+
+    <div style="margin:10px 0;">
+      <input type="checkbox" name="remember" style="width:auto;">
+      <span> Remember me</span>
     </div>
-</body>
-</html>
+
+    <a href="{{ route('register') }}">belom punya akun? klik disini</a>
+    <br><br>
+    <button class="primary">Masuk</button>
+
+    <p class="helper">
+      <a href="{{ route('password.request') }}">Lupa password?</a>
+    </p>
+
+  </form>
+
+</div>
+
+</x-guest-layout>

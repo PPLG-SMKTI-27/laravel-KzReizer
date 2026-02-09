@@ -43,7 +43,7 @@
         <div class="project-content">
           <h4>{{ $project->title }}</h4>
           <p>{{ $project->description }}</p>
-          <a href="{{ route('login') }}" class="btn outline">Detail</a>
+          <a href="{{ route('project') }}" class="btn outline">Detail</a>
         </div>
       </div>
     @empty
