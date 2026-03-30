@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/htuwfhct/public_html
+    - export DEPLOYPATH=/home/htuwfhct/laravelrival/
     - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -R public/* /home/htuwfhct/public_html/
