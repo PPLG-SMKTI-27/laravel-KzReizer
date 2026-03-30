@@ -73,6 +73,7 @@
     <a href="https://wa.me/6282150942009" class="btn" target="_blank">WhatsApp</a>
     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kzreizer@gmail.com" class="btn" target="_blank">Email</a>
     <a href="https://github.com/kzreizer" class="btn" target="_blank">GitHub</a>
+    <a href="https://discord.com/users/1080732546209427556" class="btn" target="_blank">Discord</a>
   </div>
 </section>
 
