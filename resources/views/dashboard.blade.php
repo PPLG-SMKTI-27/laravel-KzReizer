@@ -28,6 +28,26 @@
             <h3>Total Projects</h3>
             <p>{{ $totalProjects }}</p>
         </div>
+
+        <div class="card">
+            <h3>Total Mobil</h3>
+            <p>{{ $totalCars }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Ready Stock</h3>
+            <p>{{ $readyStock }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Order Baru</h3>
+            <p>{{ $newOrders }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Deal Selesai</h3>
+            <p>{{ $completedOrders }}</p>
+        </div>
     </div>
 
     <div class="latest">
@@ -40,6 +60,19 @@
             </div>
         @empty
             <p>No projects yet.</p>
+        @endforelse
+    </div>
+
+    <div class="latest mt-6">
+        <h2>Latest Orders</h2>
+
+        @forelse ($latestOrders as $order)
+            <div class="project-item">
+                <h4>{{ $order->order_code }} - {{ $order->customer_name }}</h4>
+                <p>{{ $order->car->name ?? '-' }} | Status: {{ ucfirst($order->status) }}</p>
+            </div>
+        @empty
+            <p>No orders yet.</p>
         @endforelse
     </div>
 

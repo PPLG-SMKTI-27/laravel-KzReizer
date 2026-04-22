@@ -11,9 +11,12 @@
     <aside class="sidebar">
         <h2 class="logo">LuxPanel</h2>
 
+        <a href="{{ route('dashboard') }}">Dashboard</a>
+        <a href="{{ route('admin.cars.index') }}">Inventori Mobil</a>
+        <a href="{{ route('admin.orders.index') }}">Order Masuk</a>
         <a href="{{ route('skills.index') }}">Skills</a>
         <a href="{{ route('projects.index') }}">Projects</a>
-        <a href="{{ route('dashboard') }}">Dashboard</a>
+        <a href="{{ route('shop.index') }}">Lihat Dealer Site</a>
     </aside>
 
 <main class="main-content">

@@ -32,7 +32,7 @@
       <div class="project-card">
         <div class="project-thumb">
           @if(!empty($project->image))
-            <img src="{{ asset('images/' . $project->image) }}" alt="{{ $project->title }}">
+            <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
           @else
             {{ strtoupper(\Illuminate\Support\Str::limit($project->title, 8, '')) }}
           @endif
@@ -40,7 +40,10 @@
         <div class="project-content">
           <h4>{{ $project->title }}</h4>
           <p>{{ $project->description }}</p>
-          <a href="{{ route('project') }}" class="btn outline">Detail</a>
+          @if($project->link)
+            <a href="{{ $project->link }}" target="_blank" class="btn outline">Live Demo</a>
+          @endif
+          <a href="#" class="btn outline">Detail</a>
         </div>
       </div>
     @empty

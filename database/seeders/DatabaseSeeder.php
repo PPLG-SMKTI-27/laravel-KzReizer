@@ -15,9 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-     $this->call([
+    $this->call([
     ProjectSeeder::class,
     SkillSeeder::class,
+    CarSeeder::class,
 ]);
    
     // User::factory(10)->create();
@@ -25,6 +26,12 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
+        ]);
+
+        User::factory()->create([
+            'name' => 'Admin LuxAuto',
+            'email' => 'admin@luxauto.test',
+            'role' => 'admin',
         ]);
     }
 

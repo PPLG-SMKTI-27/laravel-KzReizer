@@ -356,6 +356,23 @@ body {
     border: 1px solid var(--dark-border);
 }
 
+.grid-2 {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--dark-border);
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+}
+
 /* ===== PROJECTS PAGE ===== */
 .admin-container .btn-create {
     margin-bottom: 2rem;
@@ -401,6 +418,10 @@ body {
     .admin-table td,
     .admin-table th {
         padding: 1rem;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
 }
 

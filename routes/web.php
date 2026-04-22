@@ -4,13 +4,20 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CarController;
+use App\Http\Controllers\Admin\CarsController;
+use App\Http\Controllers\Admin\OrdersController;
 
 // ===== PUBLIC ROUTES =====
 Route::get('/', [ProjectController::class, 'home'])->name('index');
 Route::get('/project/{id}', [ProjectController::class, 'show'])->name('project.detail');
+
+// LuxAuto public routes
+Route::get('/shop', [CarController::class, 'index'])->name('shop.index');
+Route::get('/cars/{car}', [CarController::class, 'show'])->name('cars.show');
+Route::post('/cars/{car}/purchase', [CarController::class, 'purchase'])->name('cars.purchase');
 
 // ===== ROUTES YANG MEMERLUKAN LOGIN (USER BIASA) =====
 Route::middleware(['auth'])->group(function () {
@@ -31,6 +38,12 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     
     // Management Projects - /projects, /projects/create, dll
     Route::resource('projects', ProjectsController::class);
+    
+    // Management Cars & Orders
+    Route::prefix('dashboard')->name('admin.')->group(function () {
+        Route::resource('cars', CarsController::class);
+        Route::resource('orders', OrdersController::class)->only(['index', 'show', 'update']);
+    });
 });
 
 // ===== AUTH ROUTES =====
